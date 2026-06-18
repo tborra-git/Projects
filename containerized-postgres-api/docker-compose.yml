@@ -1,0 +1,12 @@
+services:
+  db:
+    image: ict-db:latest
+    environment:
+      - POSTGRES_PASSWORD=password
+  api:
+    image: ict-api:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+
